@@ -1,0 +1,64 @@
+import { useState } from "react";
+
+function App() {
+  const [nota1, setNota1] = useState("");
+  const [nota2, setNota2] = useState("");
+  const [nota3, setNota3] = useState("");
+  const [promedio, setPromedio] = useState(null);
+  const [estado, setEstado] = useState("");
+
+  const calcularPromedio = () => {
+    const n1 = parseFloat(nota1);
+    const n2 = parseFloat(nota2);
+    const n3 = parseFloat(nota3);
+
+    if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+      alert("Por favor, ingrese solo números.");
+      return;
+    }
+
+    const suma = n1 + n2 + n3;
+    const promedioCalc = suma / 3;
+    setPromedio(promedioCalc.toFixed(2));
+    setEstado(promedioCalc >= 4.0 ? "APROBADO" : "REPROBADO");
+  };
+
+  return (
+    <div style={{ textAlign: "center", fontFamily: "Arial, sans-serif" }}>
+      <h2>Calculadora de Promedio</h2>
+      <input
+        type="number"
+        placeholder="Ingrese nota 1"
+        value={nota1}
+        onChange={(e) => setNota1(e.target.value)}
+      />
+      <br />
+      <input
+        type="number"
+        placeholder="Ingrese nota 2"
+        value={nota2}
+        onChange={(e) => setNota2(e.target.value)}
+      />
+      <br />
+      <input
+        type="number"
+        placeholder="Ingrese nota 3"
+        value={nota3}
+        onChange={(e) => setNota3(e.target.value)}
+      />
+      <br />
+      <button onClick={calcularPromedio}>Calcular</button>
+
+      {promedio !== null && (
+        <div>
+          <h3>------ Resultados ----</h3>
+          <p>Promedio: {promedio}</p>
+          <p>Estado: {estado}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
+
