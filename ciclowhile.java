@@ -1,9 +1,10 @@
-public class ciclowhile {
-    public static void main(String[] args) {
-        int i = 1;
-        while (i <=5) {
-            System.out.println("Iteracion" + i);
-            i++;
+public class ciclowhile{
+    public static void main(String[] args){
+        init r = 1;
+        while(r < 97){
+           System.out.println("Tux" + r);
+           r++;
         }
     }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
