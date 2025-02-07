@@ -1,40 +1,36 @@
 using System;
-
-class Program
+/////////////////////
+class fotocopiadora
 {
-    static void Main()
+
+    static void main()
     {
         int hojas;
         double total;
 
-        // Limpiar pantalla
-        Console.Clear();
 
-        // Se ingresa la cantidad de hojas
-        Console.Write("Ingresa la cantidad de hojas: ");
-        hojas = int.Parse(Console.ReadLine());
-
-        // Cada hoja vale $20
+    
+////////////////////////
+        Console.clear();
+////////////////////////
+        Console.write("ingresa la cantidad de hojas por favor");
+        hojas - int.Parse(Console.ReadLine());
+////////////////////////
         total = 20 * hojas;
-
-        // Si hay más de 30 hojas, se aplica un 10% de descuento
         if (hojas > 30)
         {
-            total *= 0.90;
+            total*= 0.90;
         }
-
-        // Pausar antes de limpiar pantalla
-        Console.WriteLine("Presiona una tecla para continuar...");
+//////////////////////////
+        Console.writeLine("Presiona una tecla para continuar")
         Console.ReadKey();
-
-        // Limpiar pantalla
+//////////////////////////
         Console.Clear();
-
-        // Imprimir boleta
-        Console.WriteLine("\n    ----  BOLETA -----");
-        Console.WriteLine($"    Cant. hojas:  {hojas}");
-        Console.WriteLine("    Valor por hoja $20");
-        Console.WriteLine($"    TOTAL ${total:F2}");
+//////////////////////////                
+        Console.writeLine("\n *****BOLETA*******");
+        Console.writeLine("$ cantidad de hojas {hojas}");
+        Console.writeLine("valor por hojas $20");
+        Console.writeLine("TOTAL $ {total: F2}");
     }
 }
-
+/////////////////////////
