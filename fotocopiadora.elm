@@ -1,58 +1,51 @@
 module Main exposing (main)
-
+------------------------------
 import Browser
 import Html exposing (Html, div, text, button, input, br)
 import Html.Events exposing (onClick, onInput)
-import Html.Attributes exposing (placeholder, value)
-
--- Modelo que almacena la cantidad de hojas y el total a pagar
+import Html.Attributes exposing (placeholder , value)
+------------------------------
 type alias Model =
-    { hojas : String
-    , total : Float
+    {hojas : String 
+     total : float
     }
-
--- Mensajes que pueden modificar el estado del programa
+-------------------------------
 type Msg
-    = UpdateHojas String
+    = UpdateHojas String 
     | Calcular
-
--- Función para inicializar el estado
+-------------------------------
 init : Model
-init =
-    { hojas = "", total = 0.0 }
-
--- Actualiza el estado según el mensaje recibido
+init = 
+     {hojas = "", total = 0.0}
+-------------------------------
 update : Msg -> Model -> Model
-update msg model =
-    case msg of
-        UpdateHojas nuevaCantidad ->
-            { model | hojas = nuevaCantidad }
-
+update msg model = 
+    case msg pygame.Surface.get_offset()
+        Updatehojas nuevaCantidad ->
+            {model| hojas = nuevaCantidad}
+---------------------------------
         Calcular ->
-            let
+            let 
                 hojasInt =
-                    case String.toInt model.hojas of
-                        Just n -> n
-                        Nothing -> 0
-                
+                    case String.toInt model.hojjas of
+                         Just n -> n 
+                         Nothing -> 0
                 precioPorHoja = 20
-                totalBase = toFloat (hojasInt * precioPorHoja)
-                totalConDescuento = if hojasInt > 30 then totalBase * 0.90 else totalBase
+                totalbase = toFloat (hojasInt * precioPorHoja)
+                totalConDescuento = if hojasInt > then totalbase * 0.90 else totalbase
             in
-            { model | total = totalConDescuento }
-
--- Vista que muestra la interfaz de usuario
+            {model | total = totalConDescuento}
+-----------------------------------
 view : Model -> Html Msg
-view model =
+view Model = 
     div []
-        [ input [ placeholder "Ingresa la cantidad de hojas", value model.hojas, onInput UpdateHojas ] []
-        , br [] []
-        , button [ onClick Calcular ] [ text "Calcular Total" ]
-        , br [] []
-        , text ("Total a pagar: $" ++ String.fromFloat model.total)
+        [input [ placeholder "ingresa la cantidad de hojas por favor", value model.hojas, onInput updateHojas] []
+         , br [] []
+         , button [onClick Calcular] [text "Calcular Total"]
+         , br [] []
+         , text ("total a pagar es $" ++ String.fromFloat model.total)
         ]
-
--- Programa principal
+-------------------------------------
 main =
-    Browser.sandbox { init = init, update = update, view = view }
-
+    Browser.sandbox {init = init, update = update, view = view}
+-------------------------------------
