@@ -1,0 +1,6 @@
+module main {
+    export function helloworld() {
+        print("Hello World!")
+    }
+}
+/////// this new language was made by dolphin
