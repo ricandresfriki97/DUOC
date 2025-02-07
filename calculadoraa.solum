@@ -1,0 +1,29 @@
+module main {
+    export function calculadora(numero1, numero2, operation) {
+        let result;
+        switch (operation) {
+            case '+':
+                result = numero1 + numero2;
+                break;
+            case '-':
+                result = numero1 - numero2;
+                break;
+            case '*':
+                result = numero1 * numero2;
+                break;
+            case '/':
+                if (numero2 != 0) {
+                    result = numero1 / numero2;
+                } else {
+                    print("No se puede dividir por cero");
+                    return;
+                }
+                break;
+            default:
+                print("Operación inválida");
+                return;
+        }
+        print("Resultado: " + result);
+    }
+}
+/////// this new language was made by dolphin
