@@ -1,34 +1,31 @@
-import System.IO
-
+import System.IO 
+-------------------------------------
 main :: IO ()
 main = do
-    -- Limpiar pantalla (solo funciona en algunas terminales)
+-------------------------------------
     putStr "\ESC[H\ESC[2J"
-
-    -- Pedir la cantidad de hojas
-    putStr "Ingresa la cantidad de hojas: "
-    hFlush stdout  -- Forzar impresión en pantalla antes de recibir entrada
-    input <- getLine
-    let hojas = read input :: Int
-
-    -- Calcular el total
-    let precioPorHoja = 20
-    let totalBase = precioPorHoja * hojas
-    let total = if hojas > 30 then round (fromIntegral totalBase * 0.90) else totalBase
-
-    -- Simular una pausa
-    putStr "Presiona Enter para continuar..."
     hFlush stdout
-    _ <- getLine  -- Espera la entrada del usuario
+    input <- getLine
+    let hojas = read input :: Int 
+--------------------------------------
+    let precioPorHoja = 20
+    let totalBase - precioPorHoja * hojas
+    let total = if hojas > 30 then round (fromIntergral totalBase * 0.90) else totalBase
+---------------------------------------
+    putStr "presuiba enter para continuar"
+    hFlush stdout
+    _ <- getLine
+-----------------------------------------
+    putStr  "\ESC[H\ESC[2J"
+-----------------------------------------
+    putStr $ unlines [
+        "*********Boleta*******"
+        "cantidad de hojas: " ++ show hojas
+        "valor por hojas: $20",
+        "TOTAL: $ " ++ show total
 
-    -- Limpiar pantalla nuevamente
-    putStr "\ESC[H\ESC[2J"
 
-    -- Imprimir la boleta
-    putStrLn $ unlines [
-        "    ----  BOLETA -----",
-        "    Cant. hojas:  " ++ show hojas,
-        "    Valor por hoja: $20",
-        "    TOTAL: $" ++ show total
-      ]
 
+
+    ]
+-------------------------------------------                     
