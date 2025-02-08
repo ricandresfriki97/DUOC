@@ -1,45 +1,36 @@
-import java.util.Scanner;
-
-public class Boleta {
+import java,util.Scanner;
+////////////////////////////////
+public class fotocopiadora {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Limpiar pantalla (Solo funciona en algunas terminales)
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        // Pedir la cantidad de hojas
-        System.out.print("Ingresa la cantidad de hojas: ");
+////////////////////////////////
+        System.out.print("\033[H\033[2J")
+        System.out.flush()
+////////////////////////////////
+        System.out.print("ingresa la cantidad de hojas por favor");
         int hojas = scanner.nextInt();
-
-        // Calcular el total
-        int precioPorHoja = 20;
-        double total = precioPorHoja * hojas;
-
-        // Aplicar descuento si hay más de 30 hojas
+//////////////////////////////////
+        int precioPorHoja = 20
+        double total = precioPorHoja * hojas
+//////////////////////////////////
         if (hojas > 30) {
-            total *= 0.90; // Aplicar 10% de descuento
-        }
-
-        // Simular una pausa antes de mostrar la boleta
-        System.out.print("Presiona Enter para continuar...");
-        scanner.nextLine(); // Consumir el salto de línea pendiente
-        scanner.nextLine(); // Esperar que el usuario presione Enter
-
-        // Limpiar pantalla nuevamente
-        System.out.print("\033[H\033[2J");
+            total*= 0.90;
+        } 
+///////////////////////////////////
+        System.out.print("presiona pra continuar")
+        scanner.nextLine();
+        scanner.nextLine();
+////////////////////////////////////
+        System.out.print("\033[H\033[2J")
         System.out.flush();
-
-        // Imprimir la boleta
-        System.out.println("""
-            ----  BOLETA -----
-            Cant. hojas:  %d
-            Valor por hoja: $20
-            TOTAL: $%.2f
-        """.formatted(hojas, total));
-
-        // Cerrar scanner
-        scanner.close();
+/////////////////////////////////////
+        System.out.println("*******Boleta******
+        cantidad de hojas %d
+        valor por hoja: $20
+        TOTAL $%.2f
+        ".formatted(hojas, total));
+///////////////////////////////////////
+        scanner.close();                                                               
     }
 }
-
+/////////////////////////////////////////
