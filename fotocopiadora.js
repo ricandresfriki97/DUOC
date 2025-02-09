@@ -1,38 +1,38 @@
 const readline = require('readline');
-
+////////////////////////////////////////
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+    input: ProcessingInstruction.stdin,
+    output: ProcessingInstruction.stdout
 });
-
-// Limpiar la pantalla
+////////////////////////////////////////
 console.clear();
-
-// Pedir la cantidad de hojas
-rl.question("Ingresa la cantidad de hojas: ", (hojas) => {
+////////////////////////////////////////
+rl.question("ingresa la cantidad de hojas por favor", (hojas) => {
     hojas = parseInt(hojas);
     const precioPorHoja = 20;
     let total = precioPorHoja * hojas;
-
-    // Aplicar descuento si hay más de 30 hojas
+//////////////////////////////////////////
     if (hojas > 30) {
-        total *= 0.90; // Aplicar 10% de descuento
+        total *= 0.90;
     }
-
-    // Simular pausa antes de imprimir la boleta
-    console.log("\nPresiona Enter para continuar...");
+///////////////////////////////////////////
+    console.log("\npresiona enter para continuar");
     rl.question("", () => {
-        console.clear(); // Limpiar pantalla nuevamente
-
-        // Imprimir la boleta
+        console.clear();
+///////////////////////////////////////////
         console.log(`
-            ----  BOLETA -----
-            Cant. hojas:  ${hojas}
-            Valor por hoja: $20
-            TOTAL: $${total.toFixed(2)}
-        `);
-
-        rl.close(); // Cerrar la interfaz de entrada
-    });
-});
-
+            *************boleta**********
+            cantidad de hojas ${hojas}
+            valor por hoja $20
+            TOTAL $${total.toFixed(2)}
+            
+            
+            
+            
+            
+                    `);
+/////////////////////////////////////////////
+          rl.close();                              
+    })        
+})
+////////////////////////////////////////////////
